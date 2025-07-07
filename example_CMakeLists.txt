@@ -1,0 +1,33 @@
+#
+# Remove the word "example" from the file name to run the CMake script
+#
+
+cmake_minimum_required(VERSION 3.12)
+project(MyProgram)
+
+set(CMAKE_CXX_STANDARD 14)
+
+# Add your source files
+set(SOURCE_FILES
+    src/main.cpp
+    src/other_file.cpp
+)
+
+# Add your header files if any
+set(HEADER_FILES
+    include/my_header.h
+)
+
+# Add any external libraries
+set(LIBRARIES
+    path/to/library/lib.lib
+)
+
+# Set the output executable name
+set(EXECUTABLE_NAME my_program)
+
+# Create the executable
+add_executable(${EXECUTABLE_NAME} ${SOURCE_FILES} ${HEADER_FILES})
+
+# Link against external libraries
+target_link_libraries(${EXECUTABLE_NAME} ${LIBRARIES})
